@@ -63,7 +63,9 @@ INSTALLED_APPS = [
     'DjangoUeditor',
     'easy_thumbnails',
     'filer',
-    'mptt'
+    'mptt',
+    'debug_toolbar', 
+    'django_extensions'
 ]
 AUTH_USER_MODEL = 'users.UserProfile'
 
@@ -76,6 +78,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'MxOnline.urls'
@@ -105,13 +108,21 @@ WSGI_APPLICATION = 'MxOnline.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': "mxonline",
-        'USER': 'root',
-        'PASSWORD': 'cyu78102',
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': "mxonline",
+    #     'USER': 'root',
+    #     'PASSWORD': 'cyu78102',
+    #     'HOST': '127.0.0.1',
+    # }
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': "mysites",
+        'USER': 'postgres',
+        'PASSWORD': 'cy78102',
         'HOST': '127.0.0.1',
-    }
+ }
+
 }
 
 
@@ -256,3 +267,5 @@ FILER_STORAGES = {
     },
 }
 
+INTERNAL_IPS = ('127.0.0.1',)
+DEBUG_TOOLBAR_CONFIG = {'JQUERY_URL': r"http://code.jquery.com/jquery-2.1.1.min.js", }
