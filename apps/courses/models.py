@@ -27,7 +27,7 @@ class Course(models.Model):
     fav_nums = models.IntegerField(default=0, verbose_name=u'收藏人数')
     image = models.ImageField(upload_to='courses/%Y/%m', verbose_name=u'封面图', max_length=100)
     click_nums = models.IntegerField(default=0, verbose_name=u'点击数')
-    category = models.CharField(default=u'后端', max_length=20, verbose_name=u'课程类别')
+    category = models.CharField(default='backend', max_length=20, verbose_name=u'课程类别')
     tag = models.CharField(default='', verbose_name=u'课程标签', max_length=10)
     youneed_konw = models.CharField(default='', max_length=300, verbose_name=u'课前须知')
     teacher_tell = models.CharField(default='', max_length=300, verbose_name=u'老师告诉你能学什么')

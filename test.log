@@ -1,0 +1,79 @@
+*** Starting uWSGI 2.0.15 (64bit) on [Wed Apr 19 20:52:28 2017] ***
+compiled with version: 5.4.0 20160609 on 16 April 2017 11:35:41
+os: Linux-4.4.0-53-generic #74-Ubuntu SMP Fri Dec 2 15:59:10 UTC 2016
+nodename: VM-120-4-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/django/MxOnline_Django2
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3308
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on :8001 fd 4
+spawned uWSGI http 1 (pid: 4872)
+uwsgi socket 0 bound to TCP address 127.0.0.1:39868 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Nov 19 2016, 06:48:10)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xfa6670
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xfa6670 pid: 4871 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 4871, cores: 1)
+[pid: 4871|app: 0|req: 1/1] 58.49.173.16 () {40 vars in 683 bytes} [Wed Apr 19 20:52:37 2017] GET / => generated 6560 bytes in 166 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 2/2] 58.49.173.16 () {38 vars in 655 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/search_btn.png => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 3/3] 58.49.173.16 () {38 vars in 643 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/logo.jpg => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 4/4] 58.49.173.16 () {38 vars in 649 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/nav_hot.png => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 5/5] 58.49.173.16 () {38 vars in 651 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/feature1.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 6/6] 58.49.173.16 () {38 vars in 651 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/feature2.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 7/7] 58.49.173.16 () {38 vars in 651 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/feature3.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 8/8] 58.49.173.16 () {38 vars in 651 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/feature4.png => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 9/9] 58.49.173.16 () {38 vars in 653 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/module1_1.jpg => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 10/10] 58.49.173.16 () {38 vars in 653 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/module3_1.jpg => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 11/11] 58.49.173.16 () {38 vars in 651 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/footlogo.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 12/12] 58.49.173.16 () {38 vars in 643 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/code.jpg => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 13/13] 58.49.173.16 () {38 vars in 643 bytes} [Wed Apr 19 20:52:37 2017] GET /static/images/tell.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 14/14] 58.49.173.16 () {40 vars in 685 bytes} [Wed Apr 19 20:52:37 2017] GET /static/css/reset.css => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 15/15] 58.49.173.16 () {40 vars in 685 bytes} [Wed Apr 19 20:52:37 2017] GET /static/css/style.css => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 16/16] 58.49.173.16 () {40 vars in 689 bytes} [Wed Apr 19 20:52:37 2017] GET /static/css/animate.css => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 17/17] 58.49.173.16 () {40 vars in 676 bytes} [Wed Apr 19 20:52:37 2017] GET /static/js/jquery.min.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 18/18] 58.49.173.16 () {40 vars in 704 bytes} [Wed Apr 19 20:52:37 2017] GET /static/js/jquery-migrate-1.2.1.min.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 19/19] 58.49.173.16 () {40 vars in 672 bytes} [Wed Apr 19 20:52:37 2017] GET /static/js/selectUi.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 20/20] 58.49.173.16 () {40 vars in 678 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/deco-common.js => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 21/21] 58.49.173.16 () {40 vars in 702 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/plugins/laydate/laydate.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 22/22] 58.49.173.16 () {40 vars in 694 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/plugins/layer/layer.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 23/23] 58.49.173.16 () {40 vars in 710 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/plugins/queryCity/js/public.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 24/24] 58.49.173.16 () {40 vars in 712 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/plugins/jquery.scrollLoading.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 25/25] 58.49.173.16 () {40 vars in 672 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/unslider.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 26/26] 58.49.173.16 () {40 vars in 666 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/index.js => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 27/27] 58.49.173.16 () {40 vars in 704 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/jquery-migrate-1.2.1.min.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 28/28] 58.49.173.16 () {38 vars in 643 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/logo.jpg => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 29/29] 58.49.173.16 () {38 vars in 647 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/nav_hot.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 30/30] 58.49.173.16 () {38 vars in 653 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/search_btn.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 31/31] 58.49.173.16 () {38 vars in 649 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/feature1.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 32/32] 58.49.173.16 () {38 vars in 649 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/feature2.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 33/33] 58.49.173.16 () {38 vars in 650 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/feature3.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 34/34] 58.49.173.16 () {38 vars in 650 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/feature4.png => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 35/35] 58.49.173.16 () {40 vars in 671 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/selectUi.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 36/36] 58.49.173.16 () {38 vars in 652 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/module1_1.jpg => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 37/37] 58.49.173.16 () {38 vars in 652 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/module3_1.jpg => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 38/38] 58.49.173.16 () {38 vars in 650 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/footlogo.png => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 39/39] 58.49.173.16 () {38 vars in 642 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/code.jpg => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 40/40] 58.49.173.16 () {38 vars in 642 bytes} [Wed Apr 19 20:52:38 2017] GET /static/images/tell.png => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 41/41] 58.49.173.16 () {40 vars in 677 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/deco-common.js => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 42/42] 58.49.173.16 () {40 vars in 701 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/plugins/laydate/laydate.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 43/43] 58.49.173.16 () {40 vars in 693 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/plugins/layer/layer.js => generated 668 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 44/44] 58.49.173.16 () {40 vars in 709 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/plugins/queryCity/js/public.js => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 45/45] 58.49.173.16 () {40 vars in 671 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/unslider.js => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 46/46] 58.49.173.16 () {40 vars in 711 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/plugins/jquery.scrollLoading.js => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 47/47] 58.49.173.16 () {40 vars in 677 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/deco-common.js => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)
+[pid: 4871|app: 0|req: 48/48] 58.49.173.16 () {40 vars in 665 bytes} [Wed Apr 19 20:52:38 2017] GET /static/js/index.js => generated 668 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 95 bytes (1 switches on core 0)

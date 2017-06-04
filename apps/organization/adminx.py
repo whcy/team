@@ -19,7 +19,7 @@ class CourseOrgAdmin(object):
 
     # 当有一个外键指向 CourseOrg 的时候，以 ajax 加载的方式显示 CourseOrg 列表供 select
     # TODO 用了没效果，不知道为啥
-    relfield_style = 'fk-ajax'
+    #  relfield_style = 'fk-ajax'
 
 
 class TeacherAdmin(object):

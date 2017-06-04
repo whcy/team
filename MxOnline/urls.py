@@ -16,17 +16,25 @@ Including another URLconf
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import url, include
-# from django.contrib import admin
+from django.contrib import admin
+from django.conf import settings
 from django.views.generic import TemplateView
 import xadmin
-
+xadmin.autodiscover()
 from django.views.static import serve #处理静态文件
 
 from users.views import IndexView
 from users.views import LoginView, RegisterView, ActiveUserView, ForgetPwdView, ResetView, ModifyPwdView, LogoutView
 from MxOnline.settings import MEDIA_ROOT
+from filebrowser.sites import site
+from xadmin.plugins import xversion
+xversion.register_models()
 
 urlpatterns = [
+    url(r'^filer/', include('filer.urls')),
+    url(r'^admin/filebrowser/', include(site.urls)),  
+    url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^xadmin/', xadmin.site.urls),
     url(r'^$', IndexView.as_view(), name="index"),
     url(r'^login/$', LoginView.as_view(), name='login'),
@@ -63,6 +71,10 @@ urlpatterns = [
 
     # DjangoUeditor
     url(r'^ueditor/',include('DjangoUeditor.urls' )),
+    
+    # static resource
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.STATIC_ROOT,
+        }),
 ]
 
 # 全局 404 页面配置（django 会自动调用这个变量）

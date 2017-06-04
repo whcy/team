@@ -27,8 +27,11 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 SECRET_KEY = '1t**wvn9pox&h7*(!vh66ej7+7&5b2iick6d0l5z&c16fg%cwe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+#TEMPLATE_DEBUG = True
+DEBUG = False
 
+TEMPLATE_DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
@@ -40,6 +43,9 @@ AUTHENTICATION_BACKENDS = (
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
+    'grappelli',
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +60,10 @@ INSTALLED_APPS = [
     'crispy_forms',
     'captcha',
     'pure_pagination',
-    'DjangoUeditor'
+    'DjangoUeditor',
+    'easy_thumbnails',
+    'filer',
+    'mptt'
 ]
 AUTH_USER_MODEL = 'users.UserProfile'
 
@@ -100,7 +109,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "mxonline",
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'cyu78102',
         'HOST': '127.0.0.1',
     }
 }
@@ -143,9 +152,13 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = '/static/' #设置静态文件的根目录，项目上线时配置
+#STATIC_ROOT = '/static/' #设置静态文件的根目录，项目上线时配置
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, "static"),
+)
+STATIC_ROOT = (
+    os.path.join(BASE_DIR, "collet_static")
+    
 )
 
 # QQ 邮箱发邮件 不稳定，发送太慢
@@ -165,8 +178,81 @@ EMAIL_USE_TLS = False
 EMAIL_FROM = "azaxlct@sina.com"
 
 #上传设置
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+MEDIA_URL = '/media2/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media2')
+FILEBROWSER_DIRECTORY = ''
+DIRECTORY = ''
 #
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+THUMBNAIL_HIGH_RESOLUTION = True 
+FILER_CANONICAL_URL = 'media2/'
+
+FILER_ENABLE_PERMISSIONS = True
+# Django Suit configuration example
+SUIT_CONFIG = {
+#     #  HEADER
+#     'ADMIN_NAME': '三草两木:',
+#     # 'HEADER_DATE_FORMAT': 'l, j. F Y',
+#     # 'HEADER_TIME_FORMAT': 'H:i',
+
+#     # forms
+#     'SHOW_REQUIRED_ASTERISK': True,  # Default True
+#     'CONFIRM_UNSAVED_CHANGES': True, # Default True
+
+#     # menu
+    'SEARCH_URL': '/admin/auth/user/',
+    'MENU_ICONS': {
+        'sites': 'icon-leaf',
+        'auth': 'icon-lock',
+     },
+    'MENU_OPEN_FIRST_CHILD': True, # Default True
+    'MENU_EXCLUDE': ('auth.group',),
+    'MENU': (
+       'sites',
+       {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
+       {'label': 'Settings', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group')},
+       {'label': 'Support', 'icon':'icon-question-sign', 'url': '/support/'},
+     ),
+
+    # misc
+   'LIST_PER_PAGE': 15
+}
+FILER_STORAGES = {
+    'public': {
+        'main': {
+            'ENGINE': 'filer.storage.PublicFileSystemStorage',
+            'OPTIONS': {
+                'location': '/media2/filer',
+                'base_url': '/media/filer/',
+            },
+            'UPLOAD_TO': 'filer.utils.generate_filename.randomized',
+            'UPLOAD_TO_PREFIX': 'filer_public',
+        },
+        'thumbnails': {
+            'ENGINE': 'filer.storage.PublicFileSystemStorage',
+            'OPTIONS': {
+                'location': '/media2/filer_thumbnails',
+                'base_url': '/media/filer_thumbnails/',
+            },
+        },
+    },
+    'private': {
+        'main': {
+            'ENGINE': 'filer.storage.PrivateFileSystemStorage',
+            'OPTIONS': {
+                'location': '/media2/smedia/filer',
+                'base_url': '/smedia/filer/',
+            },
+            'UPLOAD_TO': 'filer.utils.generate_filename.randomized',
+            'UPLOAD_TO_PREFIX': 'filer_public',
+        },
+        'thumbnails': {
+            'ENGINE': 'filer.storage.PrivateFileSystemStorage',
+            'OPTIONS': {
+                'location': '/media2/smedia/filer_thumbnails',
+                'base_url': '/smedia/filer_thumbnails/',
+            },
+        },
+    },
+}
+
